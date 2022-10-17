@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 import { Container,
          Tag
@@ -18,7 +18,6 @@ const HistoryFinanceCard: React.FC<IHistoryFinanceCardProps> = ({
     subtitle,
     amount
 }) => {
-    
     return (
         <Container>
             <Tag color={tagColor} />

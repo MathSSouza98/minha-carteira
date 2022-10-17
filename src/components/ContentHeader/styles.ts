@@ -19,10 +19,22 @@ export const TitleContainer = styled.div<{lineColor: String;}>`
         color: ${props => props.theme.colors.white};
     
         &::after {
+            animation: 1s animacao forwards;
             content: '';
             display: block;
             width: 55px;
-            border-bottom: 10px solid ${(props:any) => props.lineColor};
+            border-bottom: 5px solid ${(props:any) => props.lineColor};
+        }
+
+        @keyframes animacao {
+            0%{
+                width: 0;
+            }
+
+            100%{
+                width: 55px;
+            }
+            
         }
     
     }

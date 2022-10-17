@@ -14,11 +14,7 @@ const AppRoutes: React.FC =() => (
     <Layout>
         <Routes>
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/list/:type" element={<List match={{
-                params: {
-                    type: ""
-                }
-            }} />} />
+            <Route path="/list/:type" element={<List />} />
         </Routes>
     </Layout>
 );

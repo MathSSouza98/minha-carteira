@@ -36,6 +36,10 @@ export const Container = styled.li`
         padding-left: 10px;
     }
 
+    >div span {
+        font-weight: 250;
+        font-size: 22;
+    }
 
 `;
 
