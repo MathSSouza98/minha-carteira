@@ -7,7 +7,7 @@ import { Container,
 interface IHistoryFinanceCardProps{
     tagColor: string;
     title: string;
-    subtitle: string;
+    subtitle: any;
     amount: string;
 
 }

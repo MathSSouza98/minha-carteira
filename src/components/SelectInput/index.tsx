@@ -12,7 +12,10 @@ interface ISelectInputProps {
 }
 
 const SelectInput: React.FC<ISelectInputProps> = ({ 
-    options, onChange, defaultValue
+    options,
+    onChange,
+    defaultValue
+    
 }) => {
     return (
         <Container>
