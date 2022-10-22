@@ -48,6 +48,8 @@ flex-direction: column;
 align-items: center;
 
 input{
+    padding-bottom: 5px;
+    width: 200px;
     margin-left: 10px;
     align-items: center;
     border: none;

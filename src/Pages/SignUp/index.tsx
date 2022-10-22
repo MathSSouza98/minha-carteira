@@ -8,84 +8,61 @@ import mailImg from '../../assets/email.svg';
 
 import lockImg from '../../assets/password.svg';
 
+import personImg from "../../assets/person.svg";
+
 import 
-{    Container,
-     Form
-   
+    Container,
+{   Logo,
+    FormTitle,
+    Form
 }from "./styles";
+import { Link } from "react-router-dom";
 
 
 
-const SignUp: React.FC = () => {
-    function pass (passwordInput:any, passConfirmInput: any) {
-        if (passwordInput === passConfirmInput)
-            return <p color="#4E41F0">As senha são iguais</p>
-
-            else{
-                <p color="#E44C4E">
-                    As senhas não correspondem
-                </p>
-            }
-    };
+const SignIn: React.FC = () => {
+    const signup = <Link className="orange-link" to="/product">Criar minha conta</Link>
     return (
         <Container>
-            <img className="logo" src={logoImg}/>
-            <h1 className="newAccount">
-                Criar conta
-            </h1>
+            <Logo>
+                <img src={logoImg} alt="minha-carteira" />
+                <h3>Minha Carteira</h3>
+            </Logo>
             <Form>
-                <fieldset className="nameField">
-                    <label className="nameLabel">
-                        Nome completo
-                    </label>
-                    
-                    <input className="nameInput">
-
-                    </input>
-                </fieldset>
-
-                <fieldset className="emailField">
-                    <label className="emailLabel">
-                        Email
-                    </label>
-                    
-                    <input className="emailInput">
-                        
-                    </input>
-                </fieldset>
-
-                <fieldset className="passwordField">
-                    <label className="passwordLabel">
-                        Senha
-                    </label>
-                    
-                    <input className="passwordInput" type={'password'}>
-                        
-                    </input>
-                </fieldset>
-
-                <fieldset className="passConfirmField">
-                    <label className="passConfirmLabel">
-                        Confirmar senha
-                    </label>
-                    
-                    <input className="passConfirmInput" type={'password'}>
-                        
-                    </input>
-                </fieldset>
-                <button>
-                    SSSSS
-                </button>
-                <button>
-                    SSSSS
+                <FormTitle>
+                    <h1>Cadastrar</h1>
+                </FormTitle>
+                    <fieldset className="name">
+                        <label>
+                            <img src={personImg} alt="name"/>
+                        </label>
+                        <input type="text"></input>
+                    </fieldset>
+                    <fieldset className="email">
+                        <label>
+                            <img src={mailImg} alt="email"/>
+                        </label>
+                        <input type="email"></input>
+                    </fieldset>
+                     <fieldset className="password">
+                        <label>
+                            <img src={lockImg} alt="password"/>
+                        </label>
+                        <input type="text"></input>
+                    </fieldset>
+                    <fieldset className="passwordConfirm">
+                        <label>
+                            <img src={lockImg} alt="Password"/>
+                        </label>
+                        <input type="password"></input>
+                    </fieldset>
+                <button className="submit" type= "submit">
+                    Cadastrar
                 </button>
             </Form>
-            <a className="signup" href="/login">
-                Fazer login
-            </a>
+            <a href="/">Já tenho uma conta</a>
         </Container>
     );
 }
 
-export default SignUp;
-
+export default SignIn;

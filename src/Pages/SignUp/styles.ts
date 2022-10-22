@@ -1,143 +1,168 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-height: 100vh;
-width: 100vw;
-display: flex;
-flex-direction: column;
-align-items: center;
+const Container = styled.div`
+color: ${props => props.theme.colors.white};
 background-color: ${props => props.theme.colors.primary};
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+height: 100vh;
 
-.newAccount{
-    color: ${props => props.theme.colors.white};
-    display: flex  ;
-    flex-direction: column ;
-    align-items: flex-end ;
-    margin-top: 10px;
-};
 
-.signup {
+>a {
     color: ${props => props.theme.colors.white};
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-decoration: none;
+    margin-top: 100px;
     cursor: pointer;
     text-decoration: none;
     transition: opacity .3s;
     :hover{
         opacity: .5;
     }
-};
+    
+}
+
+`
+
+export const Logo = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
+
+>img{
+    padding-bottom: 5px;
+    margin-right: 10px;
+}
 
 `;
 
 export const Form = styled.form`
-    width: 300;
-    height: 500;
-    padding-top: 20px;
-    padding-bottom: 20px;
+border-radius: 5px;
+padding: 8px;
+background-color: ${props => props.theme.colors.tertiary};
+width: 350px;
+height: 391px;
+display: flex;
+flex-direction: column;
+align-items: center;
+
+
+input{
+    width: 200px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+    align-items: right;
+    
+}
+
+.name{
+    margin-top: 10px;
+    width: 251px;
+    height: 40px;
+    display: flex;
+    padding-top: 12px;
+    padding-left: 5px;
+    border-radius: 5px;
+    background-color: ${props => props.theme.colors.white};
+
+}
+
+.email{
+    margin-top: 10px;
+    width: 251px;
+    height: 40px;
+    display: flex;
+    padding-top: 12px;
+    padding-left: 5px;
+    border-radius: 5px;
+    background-color: ${props => props.theme.colors.white};
+}
+
+.password{
+    margin-top: 10px;
+    width: 251px;
+    height: 40px;
+    display: flex;
+    padding-top: 8px;
+    padding-left: 5px;
+    border-radius: 5px;
+    background-color: ${props => props.theme.colors.white};
+
+}
+
+.passwordConfirm{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 251px;
+    height: 40px;
+    display: flex;
+    padding-top: 8px;
+    padding-left: 5px;
+    border-radius: 5px;
+    background-color: ${props => props.theme.colors.white};
+}
+
+.submit{
+    margin-top: 30px;
+    padding: 10px;
+    width: 251px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: ${props => props.theme.colors.warning};
+    font-size : 18px;
+    color: ${props => props.theme.colors.white};
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    margin-bottom: 20px ;
+}
+`;
+
+export const FormTitle = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 10px;
-
-    background-color: ${props => props.theme.colors.tertiary};
-
-    .nameField{
-        display: flex;
-        align-items: center;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-
-    .nameLabel{
-        padding-left: 10px;
-        padding-right: 10px;
-        font-size: 16px;
-        color: ${props => props.theme.colors.white};
-
-        align-items: left;
-    }
-
-    .nameInput{
-        border-radius: 5px;
-        margin-right: 10px;
-        padding-left: 5px;
-
-        align-items: right;
-    }
-
-    .emailField{
-        display: flex;
-        align-items: center;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-
-    .emailLabel{
-        padding-left: 10px;
-        padding-right: 85px;
-        font-size: 16px;
-        color: ${props => props.theme.colors.white};
-
-        align-items: left;
-    }
-
-    .emailInput{
-        border-radius: 5px;
-        margin-right: 10px;
-        padding-left: 5px;
-
-        align-items: right;
-    }
-
-    .passwordField{
-        display: flex;
-        align-items: center;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-
-    .passwordLabel{
-        padding-left: 10px;
-        padding-right: 80px;
-        font-size: 16px;
-        color: ${props => props.theme.colors.white};
+    
+    h1 {
+        font-size: 36px;
         display: flex;
         flex-direction: column;
         align-items: left;
-    }
+        margin-right: 95px ;
+        margin-bottom: 20px;
+        margin-top: 20px;
 
-    .passwordInput{
-        border-radius: 5px;
-        margin-right: 10px;
-        padding-left: 5px;
-        display: flex;
-        flex-direction: column;
-        align-items: right;
-    }
-
-    .passConfirmField{
-        display: flex;
-        align-items: center;
-
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-
-    .passConfirmLabel{
-        padding-left: 10px;
-        padding-right: 10px;
-        font-size: 16px;
         color: ${props => props.theme.colors.white};
-    }
+    
+        &::after {
+            align-items: left;
+            margin-left: 2px;
+            animation: 1s animacao forwards;
+            content: '';
+            display: block;
+            width: 55px;
+            border-bottom: 5px solid #E44C4E;
+        }
 
-    .passConfirmInput{
-        border-radius: 5px;
-        margin-right: 10px;
-        padding-left: 5px;
-    }
+        @keyframes animacao {
+            0%{
+                width: 0;
+            }
 
+            100%{
+                width: 55px;
+            }
+            
+        }
+    
+    }
+    
 
 `;
 
+export default Container
