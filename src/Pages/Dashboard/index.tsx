@@ -7,7 +7,8 @@ import {
     SelectInput,
     WalletBox,
     MessageBox,
-    PieChartBox
+    PieChartBox,
+    HistoryBox
 } from '../../components/index'
 
 import { 
@@ -154,6 +155,53 @@ const Dashboard: React.FC = () => {
 
         return data;
     },[totalGains,totalExpenses]);
+
+    const historyData = useMemo(() => {
+        return listOfMonths.map((_, month) =>{
+            let amountEntry = 0;
+            gains.forEach(gain => {
+                const date = new Date(gain.date);
+                const gainMonth = date.getMonth();
+                const gainYear = date.getFullYear();
+
+                if(gainMonth === month && gainYear === Number(yearSelected)){
+                    try{
+                        amountEntry += Number(gain.amount);
+                    }catch{
+                        throw new Error('amounEntry is invalid. amountEntry must be a valid number.')
+                    }
+                }
+            });
+
+            let amountOutput = 0;
+            expenses.forEach(expenses => {
+                const date = new Date(expenses.date);
+                const expenseMonth = date.getMonth();
+                const expensesYear = date.getFullYear();
+
+                if(expenseMonth === month && expensesYear === Number(yearSelected)){
+                    try{
+                        amountOutput += Number(expenses.amount);
+                    }catch{
+                        throw new Error('amounOutput is invalid. amountOutput must be a valid number.')
+                    }
+                }
+            });
+
+            return {
+                monthNumber: month,
+                month: listOfMonths[month].substring(0, 3),
+                amountEntry,
+                amountOutput
+            }
+        })
+        .filter(item =>{
+            const currentMonth = new Date().getMonth();
+            const currentYear = new Date().getFullYear();
+
+            return (Number(yearSelected) === currentYear && item.monthNumber <= currentMonth || Number(yearSelected) < currentYear)
+        })
+    },[yearSelected]);
      
 
     return (
@@ -200,6 +248,13 @@ const Dashboard: React.FC = () => {
                 />
 
                 <PieChartBox data={relationExpensesVersusGains} />
+
+                <HistoryBox
+                    data={historyData}
+                    lineColorAmountEntry='#F7931B'
+                    lineColorAmountOutput='#E44C4E'
+                />
+
             </Content>
         </Container>
     );
