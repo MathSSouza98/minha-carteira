@@ -8,7 +8,7 @@ import App from './app.routes';
 
 const Routes: React.FC = () => (
     <BrowserRouter>
-    <App />
+    <App/>
     </BrowserRouter>
 );
 

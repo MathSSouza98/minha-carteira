@@ -1,5 +1,3 @@
-import { fileURLToPath } from 'url'
-
 export {default as Aside} from './Aside/index'
 export {default as Content} from './Content'
 export {default as ContentHeader} from './ContentHeader'
@@ -8,3 +6,6 @@ export {default as MainHeader} from './MainHeader'
 export {default as SelectInput} from './SelectInput'
 export {default as Toogle} from './Toggle'
 export {default as HistoryFinanceCard} from './HistoryFinanceCard'
+export {default as WalletBox} from './WalletBox'
+export {default as MessageBox} from './MessageBox'
+export {default as PieChartBox} from './PieChartBox'
