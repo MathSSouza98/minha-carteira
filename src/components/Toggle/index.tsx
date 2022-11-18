@@ -12,13 +12,19 @@ const Toggle: React.FC = () => {
 
     return(
     <Container>
-        <ToggleSelector
-            width={85}
-            checked={on}
-            uncheckedIcon={<p className='text-right'>Light</p>}
-            checkedIcon={<p className='text-left'>Dark</p>}
-            onChange={() => setOn(!on)}
-        />
+        <ToggleLabel>
+            Light
+            <ToggleSelector
+                width={40}
+                height={20}
+                checked={on}
+                uncheckedIcon
+                checkedIcon
+                onChange={() => setOn(!on)}
+            />
+            Dark
+        </ToggleLabel>
+        
     </Container>
 )}
 
