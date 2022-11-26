@@ -7,8 +7,7 @@ import Aside from '../Aside'
 import Content from '../Content'
 
 
-const Layout: React.FC<{children:React.ReactNode}> = ({ children }) => {
-    return (
+const Layout: React.FC<{children:React.ReactNode}> = ({ children }) =>  (
         <Grid>
             <MainHeader />
             <Aside />
@@ -17,6 +16,6 @@ const Layout: React.FC<{children:React.ReactNode}> = ({ children }) => {
             </Content >
         </Grid>
     );
-}
+
 
 export default Layout;

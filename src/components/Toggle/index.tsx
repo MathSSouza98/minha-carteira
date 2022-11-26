@@ -6,23 +6,35 @@ import {
     ToggleSelector
 } from './styles';
 
+interface IToggleProps{
+    labelLeft: string;
+    labelRight: string;
 
-const Toggle: React.FC = () => {
-    const [on, setOn] = useState(false);
+    checked: boolean;
+
+    onChange(): void;
+}
+
+const Toggle: React.FC<IToggleProps> = ({
+    labelLeft,
+    labelRight,
+    checked,
+    onChange
+}) => {
 
     return(
     <Container>
         <ToggleLabel>
-            Light
+            {labelLeft}
             <ToggleSelector
                 width={40}
                 height={20}
-                checked={on}
+                checked={checked}
                 uncheckedIcon
                 checkedIcon
-                onChange={() => setOn(!on)}
+                onChange={onChange}
             />
-            Dark
+            {labelRight}
         </ToggleLabel>
         
     </Container>

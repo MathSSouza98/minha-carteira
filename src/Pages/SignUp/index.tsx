@@ -48,7 +48,7 @@ const SignIn: React.FC = () => {
                         <label>
                             <img src={lockImg} alt="password"/>
                         </label>
-                        <input type="text"></input>
+                        <input type="password"></input>
                     </fieldset>
                     <fieldset className="passwordConfirm">
                         <label>

@@ -13,7 +13,7 @@ export const ToggleLabel = styled.div`
 
 export const ToggleSelector = styled(Switch).attrs<ReactSwitchProps>(
     ({ theme }) => ({
-        onColor: theme.colors.black,
+        onColor: theme.colors.gray,
         offColor: theme.colors.gray
     }))<ReactSwitchProps>`
 

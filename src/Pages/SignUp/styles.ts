@@ -50,59 +50,41 @@ align-items: center;
 
 
 input{
+   
     width: 200px;
-    padding-bottom: 5px;
+    
     margin-left: 10px;
     align-items: right;
     
 }
 
-.name{
-    margin-top: 10px;
+label{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    padding: 0;
+}
+
+img{
+    
+    margin-right: 5px;
+}
+fieldset{
+    
     width: 251px;
     height: 40px;
     display: flex;
-    padding-top: 12px;
+    align-items: center;
     padding-left: 5px;
+    margin-bottom: 15px;
     border-radius: 5px;
     background-color: ${props => props.theme.colors.white};
 
 }
 
-.email{
-    margin-top: 10px;
-    width: 251px;
-    height: 40px;
-    display: flex;
-    padding-top: 12px;
-    padding-left: 5px;
-    border-radius: 5px;
-    background-color: ${props => props.theme.colors.white};
-}
 
-.password{
-    margin-top: 10px;
-    width: 251px;
-    height: 40px;
-    display: flex;
-    padding-top: 8px;
-    padding-left: 5px;
-    border-radius: 5px;
-    background-color: ${props => props.theme.colors.white};
-
-}
-
-.passwordConfirm{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 251px;
-    height: 40px;
-    display: flex;
-    padding-top: 8px;
-    padding-left: 5px;
-    border-radius: 5px;
-    background-color: ${props => props.theme.colors.white};
-}
 
 .submit{
     margin-top: 30px;

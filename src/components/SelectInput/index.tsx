@@ -16,8 +16,7 @@ const SelectInput: React.FC<ISelectInputProps> = ({
     onChange,
     defaultValue
     
-}) => {
-    return (
+}) => (
         <Container>
             <select onChange={onChange} defaultValue={defaultValue}>
                 {
@@ -29,6 +28,5 @@ const SelectInput: React.FC<ISelectInputProps> = ({
             </select>
         </Container>
     );
-}
 
 export default SelectInput;

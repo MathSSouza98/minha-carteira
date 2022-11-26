@@ -22,7 +22,8 @@ import {
 
 import formatCurrency from '../../utils/formatCurrency'
 import formatDate from "../../utils/formatDate";
-import { uuid } from "uuidv4";
+import { v4 } from "uuid";
+import { useTheme } from "../../hooks/theme";
 
 
 
@@ -79,6 +80,8 @@ const List: React.FC = () => {
         });
     },[]);
 
+    const {theme} = useTheme()
+
     const handleFrequencyClick = (frequency: String) => {
         const alreadySelected = selectedFrequency.findIndex(item => item === frequency);
 
@@ -103,20 +106,21 @@ const List: React.FC = () => {
         });
 
         const formattedData = filteredData.map((item:any) =>{
+            
 
             return{
-                id: uuid(),
+                id: v4(),
                 description: item.description,
                 amountFormatted: formatCurrency((item.amount)),
                 frequency: item.frequency,
                 dataFormatted: formatDate(item.date),
-                tagColor : item.frequency === 'recorrente' ? '#4E41F0' : '#E44C4E'
+                tagColor : item.frequency === 'recorrente' ? theme.colors.success : theme.colors.warning
             }
         });
     
         setData(formattedData)
 
-    },[listData, monthSelected, yearSelected, data.length, selectedFrequency]);
+    },[listData, monthSelected, yearSelected, data.length, selectedFrequency, theme]);
 
     return (
         <Container>
