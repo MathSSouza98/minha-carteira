@@ -158,7 +158,7 @@ const List: React.FC = () => {
                             tagColor={item.tagColor}
                             title={item.description}
                             subtitle={item.dataFormatted}
-                            amount={item.amountFormatted}
+                            amount={`R$ ${item.amountFormatted}`}
                         />
                     ))
                 }
