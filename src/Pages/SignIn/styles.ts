@@ -41,57 +41,13 @@ export const Form = styled.form`
 border-radius: 5px;
 padding: 8px;
 background-color: ${props => props.theme.colors.tertiary};
-width: 350px;
-height: 354px;
+width: 300px;
+height: 300px;
 display: flex;
 flex-direction: column;
 align-items: center;
 
-input{
-    padding-bottom: 5px;
-    width: 200px;
-    margin-left: 10px;
-    align-items: center;
-    border: none;
-}
 
-.email{
-    margin-top: 10px;
-    width: 251px;
-    height: 40px;
-    display: flex;
-    padding-top: 12px;
-    padding-left: 5px;
-    border-radius: 5px;
-    background-color: ${props => props.theme.colors.white};
-
-}
-
-.password{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 251px;
-    height: 40px;
-    display: flex;
-    padding-top: 8px;
-    padding-left: 5px;
-    border-radius: 5px;
-    background-color: ${props => props.theme.colors.white};
-}
-
-.submit{
-    margin-top: 30px;
-    padding: 10px;
-    width: 251px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: ${props => props.theme.colors.warning};
-    font-size : 18px;
-    color: ${props => props.theme.colors.white};
-    text-decoration: none;
-}
 `;
 
 export const FormTitle = styled.div`
@@ -105,7 +61,7 @@ export const FormTitle = styled.div`
         flex-direction: column;
         align-items: left;
         margin-right: 145px ;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
         margin-top: 20px;
 
         color: ${props => props.theme.colors.white};

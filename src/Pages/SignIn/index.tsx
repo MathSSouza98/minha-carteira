@@ -1,6 +1,4 @@
-import React from "react";
-
-import {useState} from 'react'
+import React, {useState} from "react";
 
 import logoImg from '../../assets/logo.svg';
 
@@ -15,36 +13,44 @@ import
     Form
 }from "./styles";
 import { Link } from "react-router-dom";
+import { Button, Input } from "../../components";
+
+import { useAuth } from "../../hooks/auth";
 
 
 
 const SignIn: React.FC = () => {
-    const signup = <Link className="orange-link" to="/product">Criar minha conta</Link>
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+
+    const { signIn } = useAuth()
+
     return (
         <Container>
             <Logo>
                 <img src={logoImg} alt="minha-carteira" />
                 <h3>Minha Carteira</h3>
             </Logo>
-            <Form>
+            <Form onSubmit={() => signIn(email, password)}>
                 <FormTitle>
                     <h1>Entrar</h1>
                 </FormTitle>
-                    <fieldset className="email">
-                        <label>
-                            <img src={mailImg} alt="Email"/>
-                        </label>
-                        <input type="text"></input>
-                    </fieldset>
-                    <fieldset className="password">
-                        <label>
-                            <img src={lockImg} alt="Password"/>
-                        </label>
-                        <input type="password"></input>
-                    </fieldset>
-                <button className="submit" type= "submit">
-                    Acessar
-                </button>
+                
+                <Input 
+                    type='email'
+                    placeholder="e-mail"
+                    required
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+
+                <Input 
+                    type='password'
+                    placeholder="senha"
+                    required
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+                
+                <Button type="submit">Acessar</Button>
             </Form>
             <a href="/signup">Criar minha conta</a>
         </Container>

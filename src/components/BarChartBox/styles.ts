@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import {
     ResponsiveContainer,
     BarChart,
@@ -10,6 +10,20 @@ import {
 interface ILegendProps{
     color: string;
 }
+
+const animate = keyframes`
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    50%{
+        opacity: .3;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+`
 
 export const Container = styled.div`
     width: 48%;
@@ -23,6 +37,16 @@ export const Container = styled.div`
     border-radius: 7px;
 
     display: flex;
+
+    @media (max-width: 1200px) {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        height: auto;
+    }
+
+    animation: ${animate} .5s;
 
 `;
 
@@ -58,6 +82,12 @@ export const LegendContainer = styled.ul`
     background-color: ${props => props.theme.colors.tertiary};
 }
 
+@media (max-width: 1200px) {
+        display: flex;
+
+        height: auto;
+    }
+
 `;
 
 export const Legend = styled.li<ILegendProps>`
@@ -83,6 +113,16 @@ export const Legend = styled.li<ILegendProps>`
     >span {
         margin-left: 5px;
     }
+
+    @media (max-width: 1200px) {
+        >div {
+        width: 30px;
+        height: 30px;
+
+        font-size: 10px;
+        line-height: 30px;
+    }
+}
 `;
 
 export const SideRight = styled.main`

@@ -10,12 +10,16 @@ export const Container = styled.div`
 
     margin-bottom: 25px;
 
+    @media (max-width: 320px) {
+        flex-direction: column ;
+    }
+
 
 `;
 
 export const TitleContainer = styled.div<{lineColor: String;}>`
 
-> h1 {
+    > h1 {
         color: ${props => props.theme.colors.white};
     
         &::after {
@@ -39,9 +43,21 @@ export const TitleContainer = styled.div<{lineColor: String;}>`
     
     }
 
+    @media (max-width: 420px) {
+          > h1 {
+            font-size: 22px;
+
+          }      
+    }
+
 `;
 
 export const Controllers = styled.div`
     display:flex;
     
+    @media (max-width: 320px) {
+        width: 100%;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
 `;

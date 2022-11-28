@@ -1,8 +1,22 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 interface ILegendProps{
     color: string;
 }
+
+const animate = keyframes`
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    50%{
+        opacity: .3;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+`
 
 export const Container = styled.div`
     width: 100%;
@@ -19,11 +33,19 @@ export const Container = styled.div`
 
     border-radius: 7px;
 
+    animation: ${animate} .5s;
+
 `;
 
 export const ChartContainer = styled.div`
     flex: 1;
     height: 260px;
+
+    @media(max-width: 1345px) {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
 `;
 
 export const Header = styled.div`
@@ -35,6 +57,11 @@ export const Header = styled.div`
     >h2 {
         padding-left: 18px;
         margin-bottom:  20px;
+    }
+
+    @media(max-width: 1280px){
+        flex-direction: column;
+
     }
 `;
 
@@ -69,4 +96,13 @@ export const Legend = styled.li<ILegendProps>`
     >span {
         margin-left: 5px;
     }
+
+    @media(max-width: 1200px){
+       > div{
+        width: 30px;
+        height: 30px;
+        margin-left: 12px;
+        }
+    }
+
 `;
