@@ -4,7 +4,9 @@ import { BrowserRouter, useParams } from 'react-router-dom'
 
 import { ContentHeader,
          SelectInput,
-         HistoryFinanceCard
+         HistoryFinanceCard,
+         ModalAddEntries
+
 } from '../../components/index'
 
 import { Container, 
@@ -24,6 +26,7 @@ import formatCurrency from '../../utils/formatCurrency'
 import formatDate from "../../utils/formatDate";
 import { v4 } from "uuid";
 import { useTheme } from "../../hooks/theme";
+import { ButtonEntry } from "../../components/AddEntries/styles";
 
 
 
@@ -94,6 +97,8 @@ const List: React.FC = () => {
         }
     };
 
+    const [modal,setModal] = useState();
+
     useEffect (() => {
         
         const filteredData = listData.filter((item: any) => {
@@ -121,12 +126,25 @@ const List: React.FC = () => {
         setData(formattedData)
 
     },[listData, monthSelected, yearSelected, data.length, selectedFrequency, theme]);
+    
 
     return (
         <Container>
+            
+            
             <ContentHeader title={titleOptions.title} lineColor={titleOptions.linecolor}>
+                
+                <ButtonEntry onClick={() => {
+                    
+                }}>
+                    Adicionar <br/>
+                    {titleOptions.title}
+                </ButtonEntry>
+                
                 <SelectInput options={months} onChange={(e) => setMonthSelected(e.target.value)} defaultValue={monthSelected}/>
+               
                 <SelectInput options={years} onChange={(e) => setYearSelected(e.target.value)} defaultValue={yearSelected}/>
+           
             </ContentHeader>
            
             <Filters>
