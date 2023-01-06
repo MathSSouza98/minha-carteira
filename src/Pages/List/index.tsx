@@ -134,13 +134,6 @@ const List: React.FC = () => {
             
             <ContentHeader title={titleOptions.title} lineColor={titleOptions.linecolor}>
                 
-                <ButtonEntry onClick={() => {
-                    
-                }}>
-                    Adicionar <br/>
-                    {titleOptions.title}
-                </ButtonEntry>
-                
                 <SelectInput options={months} onChange={(e) => setMonthSelected(e.target.value)} defaultValue={monthSelected}/>
                
                 <SelectInput options={years} onChange={(e) => setYearSelected(e.target.value)} defaultValue={yearSelected}/>
